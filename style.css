@@ -1,0 +1,187 @@
+@font-face {
+  font-family: "Darker Grotesque";
+  font-kerning: normal;
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+  src: url("fonts/DarkerGrotesque-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Darker Grotesque";
+  font-kerning: normal;
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+  src: url("fonts/DarkerGrotesque-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Darker Grotesque";
+  font-kerning: normal;
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+  src: url("fonts/DarkerGrotesque-Light.woff2") format("woff2");
+}
+
+:root {
+  color-scheme: light dark;
+
+  --text-0: #f8f8f2;
+  --background-0: #111111;
+  --animation-duration: 0.6s;
+  --small-gap: 1vmin;
+  --large-gap: 1vmax;
+  --xlarge-gap: 2vmax;
+  --xxlarge-gap: 4vmax;
+  --small-line-height: 0.7em;
+  --regular-line-height: 1em;
+  --font-size-small: clamp(1rem, 3.5vmin, 2rem);
+  --font-size-regular: clamp(1rem, 2.5vmax, 2rem);
+  --font-size-medium: clamp(1rem, 3vw + 1rem, 4rem);
+  --font-size-large: clamp(1rem, 3vmax + 1rem, 8rem);
+}
+
+*,
+html {
+  box-sizing: border-box;
+}
+p,
+h1,
+h2,
+h3,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  max-width: 100%;
+  min-height: 100%;
+  color: var(--text-0);
+  font-family: "Darker Grotesque";
+  background: var(--background-0);
+  padding: calc(6*var(--small-gap)) calc(2*var(--large-gap));
+}
+header {
+  display: flex;
+  max-width: 100%;
+  align-items: center;
+  gap: var(--large-gap);
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  background: var(--background-0);
+}
+h1 {
+  font-weight: 400;
+  font-size: var(--font-size-large);
+}
+input[type="text"],
+input[type="number"],
+input[type="datetime-local"] {
+  max-width: 100%;
+  color: var(--text-0);
+  font-family: "Darker Grotesque";
+  background: var(--background-0); 
+  border: 1px solid var(--text-0);
+}
+button {
+  min-width: 64px;
+  text-align: left;
+  max-width: fit-content;
+  padding: var(--large-gap);
+  font-family: "Darker Grotesque";
+  border: 1px solid var(--text-0);
+}
+.fab {
+  top: 85vh;
+  z-index: 2;
+  position: fixed;
+  padding: var(--xlarge-gap);
+  right: calc(2*var(--large-gap));
+}
+.outline-button {
+  color: var(--text-0);
+  background: var(--background-0);
+}
+.fill-button {
+  color: var(--background-0);
+  background: var(--text-0);
+}
+.popup {
+  top: 15vh;
+  left: 15vw;
+  width: 70vw;
+  position: absolute;
+  text-align: center;
+  padding: var(--large-gap);
+  background: var(--text-0);
+  color: var(--background-0);
+  font-size: var(--font-size-regular);
+}
+.activities-container {
+  padding: var(--xlarge-gap) 0;
+}
+.activity-card-title {
+  font-weight: 700;
+  line-height: var(--small-line-height);
+  margin-bottom: var(--large-gap);
+  font-size: var(--font-size-large);
+}
+.activity-card-title-container {
+  padding-bottom: var(--large-gap);
+}
+.activity-card {
+  padding-bottom: var(--xxlarge-gap);
+}
+.activity-card-table {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: var(--large-gap);
+}
+.activity-card-table > div {
+  display: flex;
+  flex-flow: column nowrap;
+  width: calc((100% - 3*var(--large-gap)) / 4);
+}
+.cell {
+  font-weight: 700;
+  line-height: var(--regular-line-height);
+  font-size: var(--font-size-regular);
+  margin-bottom: var(--large-gap);
+}
+.subtitle {
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: var(--small-line-height);
+  font-size: var(--font-size-small);
+  margin-bottom: var(--small-gap);
+}
+.clickback {
+  animation-duration: var(--animation-duration);
+  animation-name: clickbackAnimation;
+  animation-timing-function: ease-in-out;
+}
+@KeyFrames clickbackAnimation {
+  0 { 
+    background: var(--text-0); 
+    color: var(--background-0); 
+  }
+  100% { 
+    background: var(--background-0); 
+    color: var(--text-0); 
+  }
+}
+.backclick {
+  animation-duration: var(--animation-duration);
+  animation-name: backclickAnimation;
+  animation-timing-function: ease-in-out;
+}
+@KeyFrames backclickAnimation {
+  0 { 
+    background: var(--background-0); 
+    color: var(--text-0); 
+  }
+  100% { 
+    background: var(--text-0); 
+    color: var(--background-0); 
+  }
+}
