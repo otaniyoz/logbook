@@ -35,7 +35,7 @@
   --xxlarge-gap: 4vmax;
   --small-line-height: 0.7em;
   --regular-line-height: 1em;
-  --font-size-small: clamp(1rem, 3.5vmin, 2rem);
+  --font-size-small: clamp(0.6rem, 1vmin + 0.6rem, 2rem);
   --font-size-regular: clamp(1rem, 2.5vmax, 2rem);
   --font-size-medium: clamp(1rem, 3vw + 1rem, 4rem);
   --font-size-large: clamp(1rem, 3vmax + 1rem, 8rem);
